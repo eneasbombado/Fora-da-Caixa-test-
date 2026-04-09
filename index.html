@@ -2,84 +2,155 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Móveis Rústicos</title>
+  <title>Fora da Caixa - Móveis Rústicos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #f4f1ec;
-      color: #3e2f23;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f2ee;
+      color: #333;
     }
 
     header {
-      background-color: #5a3e2b;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 60px;
+      align-items: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #3e2f23;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
     }
 
     .hero {
-      background-image: url('https://images.unsplash.com/photo-wood');
-      background-size: cover;
-      padding: 100px 20px;
-      text-align: center;
-      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px;
     }
 
-    .hero h1 {
-      font-size: 40px;
+    .hero-text {
+      max-width: 500px;
     }
 
-    .section {
-      padding: 40px;
-      text-align: center;
+    .hero-text h2 {
+      font-size: 48px;
+      font-family: 'Playfair Display', serif;
+      color: #2c1e14;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      color: #666;
     }
 
     .btn {
       background-color: #8b5e3c;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 5px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .hero img {
+      width: 400px;
+      border-radius: 20px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 200px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 18px;
     }
 
     footer {
-      background-color: #3e2f23;
-      color: white;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      background: #3e2f23;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Seu Nome / Sua Marcenaria</h1>
+  <h1>Fora da Caixa</h1>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contato</a>
+  </nav>
 </header>
 
-<div class="hero">
-  <h1>Móveis Rústicos e Planejados</h1>
-  <p>Feitos sob medida com qualidade e estilo</p>
-  <a href="#contato" class="btn">Solicitar orçamento</a>
-</div>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Móveis Rústicos e Planejados</h2>
+    <p>Transformamos madeira em peças únicas para o seu ambiente.</p>
+    <a href="#" class="btn">Solicitar Orçamento</a>
+    <a href="#" class="btn" style="background:#ccc;color:#333;">Ver Projetos</a>
+  </div>
 
-<div class="section">
-  <h2>Sobre Nós</h2>
-  <p>Trabalhamos com móveis rústicos personalizados, trazendo beleza e durabilidade para seu ambiente.</p>
-</div>
+  <img src="https://images.unsplash.com/photo-wood-working" alt="móveis">
+</section>
 
-<div class="section">
-  <h2>Projetos</h2>
-  <p>Em breve você poderá ver nossos trabalhos aqui!</p>
-</div>
+<section class="cards">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-wood-table" />
+    <h3>Mesas Rústicas</h3>
+  </div>
 
-<div class="section" id="contato">
-  <h2>Contato</h2>
-  <p>WhatsApp: (xx) xxxx-xxxx</p>
-</div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-wood-shelf" />
+    <h3>Prateleiras</h3>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-wood-furniture" />
+    <h3>Móveis Planejados</h3>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 - Móveis Rústicos</p>
+  <p>© 2026 - Fora da Caixa</p>
 </footer>
 
 </body>
