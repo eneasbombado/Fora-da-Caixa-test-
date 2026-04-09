@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Fora da Caixa - Móveis Rústicos</title>
 
-  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -18,6 +17,12 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(#f5f2ee, #e8e1d9);
       color: #333;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
@@ -27,29 +32,61 @@
       padding: 20px 60px;
     }
 
-    /* 🔥 LOGO + NOME */
+    /* 🔥 LOGO COM HOVER */
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      position: relative;
+      cursor: pointer;
     }
 
-    .brand img {
-      width: 80px; /* 🔥 aumentei */
+    .logo-img {
+      width: 80px;
+      transition: 0.4s;
     }
 
     .brand-name {
+      position: absolute;
+      top: 100%;
+      left: 0;
       font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #8b5e3c; /* mesma cor da logo */
-      letter-spacing: 2px;
+      font-size: 24px;
+      color: #8b5e3c;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: 0.4s;
+      white-space: nowrap;
+    }
+
+    .brand:hover .logo-img {
+      transform: translateY(-10px) scale(0.95);
+      opacity: 0.3;
+    }
+
+    .brand:hover .brand-name {
+      opacity: 1;
+      transform: translateY(10px);
     }
 
     nav a {
-      margin-left: 20px;
+      margin-left: 25px;
       text-decoration: none;
       color: #555;
       font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      width: 0%;
+      height: 2px;
+      background: #8b5e3c;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* HERO */
@@ -58,6 +95,18 @@
       align-items: center;
       justify-content: space-between;
       padding: 60px;
+      animation: slideUp 1s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     .hero-text {
@@ -83,18 +132,29 @@
       text-decoration: none;
       display: inline-block;
       margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .hero img {
       width: 420px;
       border-radius: 20px;
+      transition: 0.4s;
+    }
+
+    .hero img:hover {
+      transform: scale(1.03);
     }
 
     /* CARDS */
     .cards {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       padding: 40px;
     }
 
@@ -108,8 +168,8 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
 
     .card img {
@@ -151,10 +211,6 @@
         flex-direction: column;
         align-items: center;
       }
-
-      .brand {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -162,9 +218,8 @@
 <body>
 
 <header>
-  <!-- 🔥 LOGO + NOME -->
   <div class="brand">
-    <img src="https://cdn.discordapp.com/attachments/1445477100432654540/1491603401270886480/image.png">
+    <img src="https://cdn.discordapp.com/attachments/1445477100432654540/1491603401270886480/image.png" class="logo-img">
     <div class="brand-name">Fora da Caixa</div>
   </div>
 
@@ -188,17 +243,17 @@
 
 <section class="cards">
   <div class="card">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_803968-MLB97768909426_112025-F.webp" />
+    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_803968-MLB97768909426_112025-F.webp">
     <h3>Mesas Rústicas</h3>
   </div>
 
   <div class="card">
-    <img src="https://m.media-amazon.com/images/I/61YTOISMckL._AC_SY300_SX300_QL70_ML2_.jpg" />
+    <img src="https://m.media-amazon.com/images/I/61YTOISMckL._AC_SY300_SX300_QL70_ML2_.jpg">
     <h3>Prateleiras</h3>
   </div>
 
   <div class="card">
-    <img src="https://th.bing.com/th/id/OIP.rno7H0bdTrlrb7syhIoUnwHaHa?w=209&h=209&c=7&r=0&o=7&pid=1.7&rm=3" />
+    <img src="https://th.bing.com/th/id/OIP.rno7H0bdTrlrb7syhIoUnwHaHa?w=209&h=209&c=7&r=0&o=7&pid=1.7&rm=3">
     <h3>Móveis Planejados</h3>
   </div>
 </section>
