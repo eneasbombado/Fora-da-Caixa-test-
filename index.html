@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Fora da Caixa - Móveis Rústicos</title>
 
+  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -22,52 +23,26 @@
     header {
       display: flex;
       justify-content: space-between;
-      padding: 20px 60px;
       align-items: center;
+      padding: 20px 60px;
     }
 
-    /* 🪵 LOGO */
-    .logo-container {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
+    /* 🔥 LOGO + NOME */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .logo-img {
-      width: 100px;
-      transition: 0.4s;
+    .brand img {
+      width: 80px; /* 🔥 aumentei */
     }
 
-    .logo-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      opacity: 0;
-      transition: 0.4s;
-      text-align: center;
-    }
-
-    .logo-text h1 {
+    .brand-name {
       font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      color: #3e2f23;
-    }
-
-    .logo-text p {
-      font-size: 12px;
-      color: #777;
-    }
-
-    /* 🔥 HOVER */
-    .logo-container:hover .logo-img {
-      transform: translateY(-15px) scale(0.95);
-      opacity: 0.3;
-    }
-
-    .logo-container:hover .logo-text {
-      transform: translate(-50%, 20%);
-      opacity: 1;
+      font-size: 28px;
+      color: #8b5e3c; /* mesma cor da logo */
+      letter-spacing: 2px;
     }
 
     nav a {
@@ -77,6 +52,7 @@
       font-weight: 500;
     }
 
+    /* HERO */
     .hero {
       display: flex;
       align-items: center;
@@ -110,10 +86,11 @@
     }
 
     .hero img {
-      width: 400px;
+      width: 420px;
       border-radius: 20px;
     }
 
+    /* CARDS */
     .cards {
       display: flex;
       justify-content: center;
@@ -174,6 +151,10 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .brand {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -181,13 +162,10 @@
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="https://cdn.discordapp.com/attachments/1445477100432654540/1491609968271556789/Caixa_aberta_com_lampada_luminosa.png?ex=69d85189&is=69d70009&hm=c2ce1cc235f753a19fbd3da4495735bdeb347102373624328eb795c876d5f2eb&" class="logo-img">
-
-    <div class="logo-text">
-      <h1>FORA DA CAIXA</h1>
-      <p>Agência de publicidade</p>
-    </div>
+  <!-- 🔥 LOGO + NOME -->
+  <div class="brand">
+    <img src="https://cdn.discordapp.com/attachments/1445477100432654540/1491603401270886480/image.png">
+    <div class="brand-name">Fora da Caixa</div>
   </div>
 
   <nav>
