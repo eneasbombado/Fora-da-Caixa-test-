@@ -15,7 +15,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f5f2ee;
+      background: linear-gradient(#f5f2ee, #e8e1d9);
       color: #333;
     }
 
@@ -26,9 +26,48 @@
       align-items: center;
     }
 
-    header h1 {
+    /* 🪵 LOGO */
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .logo-img {
+      width: 100px;
+      transition: 0.4s;
+    }
+
+    .logo-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      opacity: 0;
+      transition: 0.4s;
+      text-align: center;
+    }
+
+    .logo-text h1 {
       font-family: 'Playfair Display', serif;
+      font-size: 16px;
       color: #3e2f23;
+    }
+
+    .logo-text p {
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* 🔥 HOVER */
+    .logo-container:hover .logo-img {
+      transform: translateY(-15px) scale(0.95);
+      opacity: 0.3;
+    }
+
+    .logo-container:hover .logo-text {
+      transform: translate(-50%, 20%);
+      opacity: 1;
     }
 
     nav a {
@@ -88,6 +127,12 @@
       border-radius: 15px;
       width: 200px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
     .card img {
@@ -107,13 +152,44 @@
       color: white;
       margin-top: 40px;
     }
+
+    /* 📱 RESPONSIVO */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero img {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Fora da Caixa</h1>
+  <div class="logo-container">
+    <img src="https://cdn.discordapp.com/attachments/1445477100432654540/1491603401270886480/image.png" class="logo-img">
+
+    <div class="logo-text">
+      <h1>FORA DA CAIXA</h1>
+      <p>Agência de publicidade</p>
+    </div>
+  </div>
+
   <nav>
     <a href="#">Início</a>
     <a href="#">Projetos</a>
@@ -126,7 +202,7 @@
     <h2>Móveis Rústicos e Planejados</h2>
     <p>Transformamos madeira em peças únicas para o seu ambiente.</p>
     <a href="#" class="btn">Solicitar Orçamento</a>
-    <a href="#" class="btn" style="background:#ccc;color:#333;">Ver Projetos</a>
+    <a href="#" class="btn" style="background:#e0d6cc;color:#3e2f23;">Ver Projetos</a>
   </div>
 
   <img src="https://m.media-amazon.com/images/I/71nsomVpEyL._AC_SY300_SX300_QL70_ML2_.jpg">
